@@ -1,0 +1,291 @@
+:root {
+    --soft-orange: hsl(35, 77%, 62%);
+    --soft-red: hsl(5, 85%, 63%);
+
+    --Off-white: hsl(36, 100%, 99%);
+    --grayish-blue: hsl(233, 8%, 79%);
+    --dark-grayish-blue: hsl(236, 13%, 42%);
+    --very-dark-blue: hsl(240, 100%, 5%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+p {
+    line-height: 1.8;
+    color: var(--grayish-blue);
+}
+
+body {
+    max-width: 1200px;
+    margin: auto;
+    font-size: 15px;
+    background-color: var(--Off-white);
+    padding-bottom: 4rem;
+}
+
+/* Navigation style rules */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem;
+}
+
+.header nav #menu-close {
+    position: absolute;
+    right: 1.25rem;
+    top: 1.25rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.header nav {
+    opacity: 0;
+    z-index: -999;
+    transition: all 0.3s ease-in-out;
+}
+
+.header nav.open {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 75vw;
+    background-color: var(--Off-white);
+    padding: 1.25rem;
+    opacity: 1;
+    z-index: 999;
+}
+
+.header nav ul {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header nav ul li {
+    margin: 1.5rem 0;
+    font-size: 16px;
+    cursor: pointer;
+}
+.header nav ul li:hover {
+    color: var(--soft-red);
+}
+
+.header .menu-button button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+/* END OF: vigation style rules */
+
+
+/* showcase/ top news elements */
+.showcase {
+    padding: 1.25rem;
+    padding-top: 0;
+}
+
+.showcase h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--very-dark-blue);
+    margin: 1rem 0 1rem 0;
+}
+
+.showcase div:first-child article p {
+    margin-bottom: 1rem;
+}
+
+.showcase div:first-child article button {
+    background-color: var(--soft-red);
+    color: var(--Off-white);
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.showcase div:first-child article button:hover {
+    background-color: var(--very-dark-blue);
+    cursor: pointer;
+}
+
+.showcase > div:last-child {
+    background-color: var(--very-dark-blue);
+    margin-top: 2rem;
+    padding: 1.25rem 1.25rem 0;
+}
+
+.showcase > div:last-child h2 {
+    color: var(--soft-orange);
+}
+
+.showcase > div:last-child article {
+    padding: 1.25rem 0;
+}
+
+.showcase > div:last-child article:not(:last-child) {
+    border-bottom: .5px solid var(--grayish-blue);
+
+}
+
+.showcase > div:last-child h3 {
+    color: var(--Off-white);
+    margin-bottom: 0.5rem;
+} 
+
+.showcase > div:last-child h3:hover {
+    color: var(--soft-orange);
+    cursor: pointer;
+} 
+/* END OF: showcase/ top news elements */
+
+
+/* Bottom news elements  */
+.cards {
+    padding: 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2.5rem;
+}
+
+.cards article {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.cards article img {
+    width: 150px;
+}
+
+.cards article span {
+    color: var(--grayish-blue);
+    font-weight: bold;
+    font-size: 2rem;
+    opacity: 75%;
+}
+
+.cards article h4 {
+    font-size: 1.25rem;
+    color: var(--very-dark-blue);
+    margin: 1rem 0;
+}
+/* END OF: Bottom news elements  */
+
+
+/* tablet viewport style rules */
+@media (min-width: 768px) {
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 2rem;
+    }
+
+}
+/* END OF: tablet viewport style rules */
+
+/* Desktop viewport style rules */
+@media (min-width: 1024px) {
+    /* Desktop navigation style rules */
+    .header {
+        padding: 2rem 1.25rem;
+    }
+    
+    .header nav {
+        opacity: 1;
+        z-index: auto;
+        width: 100%;
+    }
+
+    .header nav .open {
+        position: relative;
+        width: auto;
+        background-color: transparent;
+        padding: 0;
+        z-index: auto;
+    }
+
+    .header nav #menu-close {
+        display: none;
+    }
+
+    .header nav ul {
+        position: relative;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 2rem;
+        transform: translateY(0%);
+    }
+
+    .header nav ul li {
+        margin: 0;
+    }
+
+    .header .menu-button button {
+        display: none;
+    }
+
+    
+    /* END OF: Desktop navigation style rules */
+
+    /* Desktop style rules for Upper News Elements  */
+    .showcase {
+        display: flex;
+        gap: 2rem;
+    }
+
+    .showcase h1 {
+        font-size: 3rem;
+    }
+
+    .showcase > div:first-child article {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        place-items: center;
+        margin-top: 2rem;
+    }
+
+    .showcase > div:last-child {
+        margin-top: 0;
+    }
+
+    /* END OF: Desktop Style Rules For Upper News Elements */
+
+    /* Desktop Style Rules For Lower News Elements */
+    .cards {
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 2rem;
+    }
+    /* END OF: Desktop Style Rules For Lower News Elements */
+
+    
+}
+/* END OF: Desktop viewport style rules */
